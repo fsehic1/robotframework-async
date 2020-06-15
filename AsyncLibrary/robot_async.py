@@ -48,7 +48,7 @@ class AsyncLibrary:
                 ret = runner.run(Keyword(name=keyword, args=args), context)
                 q.put(ret)
             except Exception as ex:
-                print ex
+                print(ex)
 
         q = queue.Queue()
         t = threading.Thread(target=wrapped_f, args=(q,)+args, kwargs=kwargs)
